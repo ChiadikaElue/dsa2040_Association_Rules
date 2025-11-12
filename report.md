@@ -22,18 +22,19 @@ transactions = df.groupby(['Member_number', 'Date'])['itemDescription'].apply(li
 te = TransactionEncoder()
 te_array = te.fit(transactions).transform(transactions)
 basket = pd.DataFrame(te_array, columns=te.columns_)
+```
 
 ## 3. Methodology
 ### 3.1 Frequent Itemset Mining
 Two algorithms were implemented with different support thresholds:
 
-Apriori Algorithm:
+**- Apriori Algorithm:**
 
 Minimum support: 0.01 and 0.03
 
 Identified 69 and 27 itemsets respectively
 
-FP-Growth Algorithm:
+**- FP-Growth Algorithm:**
 
 Minimum support: 0.01
 
@@ -42,11 +43,11 @@ Identified 69 itemsets
 ### 3.2 Association Rule Generation
 Rules were generated using the following metrics:
 
-Support: Frequency of itemset occurrence
+**Support:** Frequency of itemset occurrence
 
-Confidence: Conditional probability of consequent given antecedent
+**Confidence:** Conditional probability of consequent given antecedent
 
-Lift: Strength of association compared to random chance
+**Lift:** Strength of association compared to random chance
 
 ## 4. Key Findings
 ### 4.1 Frequent Itemset Analysis
@@ -65,7 +66,7 @@ Yogurt (8.59%) - Dairy category
 ### 4.2 Strong Association Rules
 Three particularly interesting rules were identified:
 
-Rule 1: Curd → Sausage
+**Rule 1: Curd → Sausage**
 
 Lift: 1.45
 
@@ -73,7 +74,7 @@ Confidence: 8.73%
 
 Interpretation: Customers who buy curd are 45% more likely to buy sausage than random chance. This suggests complementary breakfast or cooking patterns.
 
-Rule 2: Brown bread → Canned beer
+**Rule 2: Brown bread → Canned beer**
 
 Lift: 1.36
 
@@ -81,7 +82,7 @@ Confidence: 6.39%
 
 Interpretation: Brown bread purchasers show higher likelihood of buying canned beer, possibly indicating snack or party shopping behavior.
 
-Rule 3: Frozen vegetables → Sausage
+**Rule 3: Frozen vegetables → Sausage**
 
 Lift: 1.23
 
@@ -94,35 +95,35 @@ FP-Growth demonstrated competitive performance with Apriori, finding the same nu
 
 ## 5. Business and Domain Insights
 ### 5.1 Retail Strategy Implications
-Product Placement: The strong association between curd and sausage suggests they should be placed in proximity to encourage cross-purchases.
+**- Product Placement:** The strong association between curd and sausage suggests they should be placed in proximity to encourage cross-purchases.
 
-Promotional Campaigns: Bundle deals could be created for high-lift pairs like brown bread and canned beer.
+**- Promotional Campaigns:** Bundle deals could be created for high-lift pairs like brown bread and canned beer.
 
-Inventory Management: High-support items like whole milk should maintain adequate stock levels, while associated items should be stocked considering their relationship.
+**- Inventory Management:** High-support items like whole milk should maintain adequate stock levels, while associated items should be stocked considering their relationship.
 
 ### 5.2 Customer Behavior Insights
-Health Consciousness: Vegetables and yogurt appearing in top items indicates health-aware shopping behavior
+**- Health Consciousness:** Vegetables and yogurt appearing in top items indicates health-aware shopping behavior
 
-Convenience Orientation: Frozen vegetables and prepared items suggest time-constrained shopping patterns
+**- Convenience Orientation:** Frozen vegetables and prepared items suggest time-constrained shopping patterns
 
-Meal Planning: Product associations reveal common meal combinations and cooking habits
+**- Meal Planning:** Product associations reveal common meal combinations and cooking habits
 
 ## 6. Limitations and Future Work
 ### 6.1 Current Limitations
-Temporal patterns (seasonality, time of day) were not considered
+- Temporal patterns (seasonality, time of day) were not considered
 
-Customer segmentation was not implemented
+- Customer segmentation was not implemented
 
-Product categories could provide broader pattern insights
+- Product categories could provide broader pattern insights
 
 ### 6.2 Future Enhancements
-Implement temporal analysis to identify seasonal patterns
+- Implement temporal analysis to identify seasonal patterns
 
-Add customer segmentation based on purchasing behavior
+- Add customer segmentation based on purchasing behavior
 
-Incorporate product categories for hierarchical analysis
+- Incorporate product categories for hierarchical analysis
 
-Develop real-time recommendation systems
+- Develop real-time recommendation systems
 
 ## 7. Conclusion
 This association rule mining project successfully identified meaningful patterns in grocery transaction data. The discovered rules provide actionable insights for retail optimization, demonstrating the practical value of data mining techniques in business intelligence. The implementation of both Apriori and FP-Growth algorithms provided comprehensive analysis of frequent patterns and their business implications.

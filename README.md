@@ -24,13 +24,12 @@ The dataset contains grocery store transactions with three columns:
 ## Implementation
 
 ### Libraries Used
-```python
 pandas, numpy, matplotlib, seaborn
 mlxtend.frequent_patterns (apriori, fpgrowth, association_rules)
 warnings
 
-Key Steps
-Data Preparation
+## Key Steps
+### Data Preparation
 
 Loaded and explored dataset structure
 
@@ -40,7 +39,7 @@ Grouped transactions by customer and date
 
 Encoded transactions using TransactionEncoder
 
-Frequent Itemset Mining
+### Frequent Itemset Mining
 
 Implemented Apriori algorithm with support thresholds: 0.01 and 0.03
 
@@ -48,7 +47,7 @@ Implemented FP-Growth algorithm with support threshold: 0.01
 
 Compared algorithm performance and itemset discovery
 
-Association Rule Generation
+### Association Rule Generation
 
 Generated rules using lift metric (min_threshold=1.0)
 
@@ -56,7 +55,7 @@ Analyzed rules using confidence, lift, and support
 
 Identified top association rules
 
-Visualization
+### Visualization
 
 Created bar chart of top 10 frequent itemsets
 
@@ -94,16 +93,18 @@ Inventory Management: Ensure adequate stock of high-support items like whole mil
 ### How to Run
 Clone the repository:
 
-bash
 git clone https://github.com/username/dsa2040-association-rules
+
+
 Install dependencies:
 
-bash
 pip install -r requirements.txt
+
+
 Run the Jupyter notebook:
 
-bash
 jupyter notebook notebooks/association_analysis.ipynb
+
 
 Google Colab Notebook
 https://colab.research.google.com/drive/1yNFOv-Lu_I4ZSO-fjyD4JaUunGkw7kH0?usp=sharing
